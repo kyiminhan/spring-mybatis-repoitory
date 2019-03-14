@@ -27,9 +27,8 @@
 <body>
 	<header th:replace="common/navbar.html :: navbar"> </header>
 	<main role="main" class="container">
-
 	<div class="jumbotron"
-		style="height: 100vh; padding: 8rem 0rem; margin-bottom: 0px;">
+		style="height: 100vh; padding-top: 8rem; margin-bottom: 0px;">
 		<form th:action="@{/employee/create}" th:method="post"
 			th:object="${employee}">
 			<div class="row justify-content-center">
