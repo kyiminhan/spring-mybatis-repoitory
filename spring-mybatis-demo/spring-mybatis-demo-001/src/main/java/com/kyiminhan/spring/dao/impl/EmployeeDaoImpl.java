@@ -28,6 +28,7 @@ public class EmployeeDaoImpl extends BaseDaoImpl<Employee> implements EmployeeDa
 
 	private static final long serialVersionUID = 1L;
 
+
 	@SuppressWarnings("unused")
 	private final EmployeeMapper employeeMapper;
 

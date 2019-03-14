@@ -28,4 +28,7 @@ public interface ControllerConstant {
 
 	/** The home. */
 	String HOME = "home";
+
+	/** The employee. */
+	String EMPLOYEE = "employee";
 }

@@ -79,4 +79,14 @@ public class EmployeeServiceImpl implements EmployeeService {
 	public Collection<Employee> getAll() {
 		return this.employeeDao.getAll();
 	}
+
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see com.kyiminhan.spring.service.EmployeeService#findById(java.lang.Integer)
+	 */
+	@Override
+	public Employee findById(Integer id) {
+		return this.employeeDao.findById(id);
+	}
 }

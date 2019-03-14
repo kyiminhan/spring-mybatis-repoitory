@@ -16,7 +16,7 @@ public interface URLConstant {
 	String DEFAULT = "/";
 
 	/** The redirect. */
-	String REDIRECT = "redirect:/";
+	String REDIRECT = "redirect:";
 
 	/** The create. */
 	String CREATE = "/create";

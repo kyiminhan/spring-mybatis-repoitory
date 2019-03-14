@@ -73,6 +73,18 @@ public class DepartmentServiceImpl implements DepartmentService {
 	/*
 	 * (non-Javadoc)
 	 *
+	 * @see
+	 * com.kyiminhan.spring.service.DepartmentService#findById(java.lang.Integer)
+	 */
+	@Override
+	public Department findById(Integer id) {
+		// TODO Auto-generated method stub
+		return this.departmentDao.findById(id);
+	}
+
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see com.kyiminhan.spring.service.DepartmentService#getAll()
 	 */
 	@Override

@@ -38,6 +38,14 @@ public interface EmployeeService {
 	void delete(Employee employee);
 
 	/**
+	 * Find by id.
+	 *
+	 * @param id the id
+	 * @return Employee
+	 */
+	Employee findById(Integer id);
+
+	/**
 	 * Gets the all.
 	 *
 	 * @return the all

@@ -40,6 +40,14 @@ public interface DepartmentService {
 	void delete(Department Department);
 
 	/**
+	 * Find by id.
+	 *
+	 * @param id the id
+	 * @return Department
+	 */
+	Department findById(Integer id);
+
+	/**
 	 * Gets the all.
 	 *
 	 * @return the all

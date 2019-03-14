@@ -40,6 +40,14 @@ public interface BaseDao<KYIMINHAN extends Serializable> extends Serializable {
 	void delete(KYIMINHAN kyiminhan);
 
 	/**
+	 * Find by id.
+	 *
+	 * @param id the id
+	 * @return KYIMINHAN
+	 */
+	KYIMINHAN findById(Integer id);
+
+	/**
 	 * Gets the all.
 	 *
 	 * @return the all

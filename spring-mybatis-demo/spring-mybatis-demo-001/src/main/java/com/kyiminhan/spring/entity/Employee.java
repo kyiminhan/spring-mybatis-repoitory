@@ -2,9 +2,11 @@ package com.kyiminhan.spring.entity;
 
 import java.io.Serializable;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
@@ -45,6 +47,22 @@ import lombok.Setter;
  * @see java.lang.Object#hashCode()
  */
 @EqualsAndHashCode
+
+/**
+ * Instantiates a new employee.
+ */
+@NoArgsConstructor
+
+/**
+ * Instantiates a new employee.
+ *
+ * @param id      the id
+ * @param name    the name
+ * @param email   the email
+ * @param address the address
+ * @param phone   the phone
+ */
+@AllArgsConstructor
 public class Employee implements Serializable {
 
 	/** The Constant serialVersionUID. */

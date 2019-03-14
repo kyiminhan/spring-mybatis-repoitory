@@ -53,18 +53,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <interface id="6" language="java" name="com.kyiminhan.spring.service.EmployeeService" 
-    project="spring-mybatis-demo-001" 
-    file="/spring-mybatis-demo-001/src/main/java/com/kyiminhan/spring/service/EmployeeService.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="137" width="248" x="372" y="523"/>    
-    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </interface>  
-  <class id="7" language="java" name="com.kyiminhan.spring.controller.EmployeeController" 
+  <class id="6" language="java" name="com.kyiminhan.spring.controller.EmployeeController" 
     project="spring-mybatis-demo-001" 
     file="/spring-mybatis-demo-001/src/main/java/com/kyiminhan/spring/controller/EmployeeController.java" binary="false" 
     corner="BOTTOM_RIGHT">    
@@ -75,7 +64,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="8" language="java" name="com.kyiminhan.spring.dao.EmployeeDao" project="spring-mybatis-demo-001" 
+  <interface id="7" language="java" name="com.kyiminhan.spring.dao.EmployeeDao" project="spring-mybatis-demo-001" 
     file="/spring-mybatis-demo-001/src/main/java/com/kyiminhan/spring/dao/EmployeeDao.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="137" width="248" x="373" y="726"/>    
@@ -85,7 +74,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="9" language="java" name="com.kyiminhan.spring.config.AppConfig" project="spring-mybatis-demo-001" 
+  <class id="8" language="java" name="com.kyiminhan.spring.config.AppConfig" project="spring-mybatis-demo-001" 
     file="/spring-mybatis-demo-001/src/main/java/com/kyiminhan/spring/config/AppConfig.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="508" y="71"/>    
@@ -95,7 +84,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="10" language="java" name="com.kyiminhan.spring.entity.Employee" project="spring-mybatis-demo-001" 
+  <class id="9" language="java" name="com.kyiminhan.spring.entity.Employee" project="spring-mybatis-demo-001" 
     file="/spring-mybatis-demo-001/src/main/java/com/kyiminhan/spring/entity/Employee.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="492" y="1338"/>    
@@ -105,7 +94,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="11" language="java" name="com.kyiminhan.spring.entity.Employee.EmployeeBuilder" 
+  <class id="10" language="java" name="com.kyiminhan.spring.entity.Employee.EmployeeBuilder" 
     project="spring-mybatis-demo-001" 
     file="/spring-mybatis-demo-001/src/main/java/com/kyiminhan/spring/entity/Employee.java" binary="false" 
     corner="BOTTOM_RIGHT">    
@@ -116,42 +105,26 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <realization id="12">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="8"/>  
-  </realization>  
-  <association id="13">    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="14" name="employeeMapper"/>      
-      <multiplicity id="15" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="16">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="17" name="employeeDao"/>      
-      <multiplicity id="18" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="19">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="6"/>  
-  </realization>  
-  <nesting id="20">    
-    <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="11"/>  
+  <nesting id="11">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="10"/>  
   </nesting>  
-  <association id="21">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="22" name="employeeService"/>      
-      <multiplicity id="23" minimum="0" maximum="1"/>    
+  <association id="12">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="13" name="employeeDao">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="14" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
+    <end type="TARGET" refId="7" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
+  <realization id="15">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="7"/>  
+  </realization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    

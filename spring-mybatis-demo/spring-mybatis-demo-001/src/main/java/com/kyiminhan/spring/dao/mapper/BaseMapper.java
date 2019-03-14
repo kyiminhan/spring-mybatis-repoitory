@@ -46,4 +46,12 @@ public interface BaseMapper<KYIMINHAN extends Serializable> extends Serializable
 	 * @return the all
 	 */
 	Collection<KYIMINHAN> getAll();
+
+	/**
+	 * Find by id.
+	 *
+	 * @param id the id
+	 * @return KYIMINHAN
+	 */
+	KYIMINHAN findById(Integer id);
 }

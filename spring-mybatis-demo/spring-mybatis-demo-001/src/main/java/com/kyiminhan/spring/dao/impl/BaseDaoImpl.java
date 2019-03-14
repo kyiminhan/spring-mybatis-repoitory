@@ -74,6 +74,16 @@ public abstract class BaseDaoImpl<KYIMINHAN extends Serializable> implements Bas
 	/*
 	 * (non-Javadoc)
 	 *
+	 * @see com.kyiminhan.spring.dao.BaseDao#findById(java.lang.Integer)
+	 */
+	@Override
+	public KYIMINHAN findById(Integer id) {
+		return this.baseMapper.findById(id);
+	}
+
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see com.kyiminhan.spring.dao.KYIMINHANDao#getAll()
 	 */
 	@Override

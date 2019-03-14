@@ -50,8 +50,12 @@ public class EmployeeController {
 	 * @param pageName the page name
 	 * @return the view
 	 */
-	private String getView(String pageName) {
+	private String forward(String pageName) {
 		return new StringBuilder(PathConstant.EMPLOYEE_PATH).append(PathConstant.PATH).append(pageName).toString();
+	}
+
+	private String redirectView(String url) {
+		return new StringBuilder(URLConstant.REDIRECT).append(PathConstant.EMPLOYEE_PATH).append(url).toString();
 	}
 
 	/**
@@ -62,7 +66,8 @@ public class EmployeeController {
 	 */
 	@GetMapping(value = URLConstant.CREATE)
 	public String create(final Model model) {
-		return this.getView(ControllerConstant.CREATE);
+		model.addAttribute(ControllerConstant.EMPLOYEE, Employee.builder().build());
+		return this.forward(ControllerConstant.CREATE);
 	}
 
 	/**
@@ -74,9 +79,10 @@ public class EmployeeController {
 	 * @return String
 	 */
 	@PostMapping(value = URLConstant.CREATE)
-	public String create(@ModelAttribute final Employee employee, final BindingResult bindingResult,
-			final Model model) {
-		return this.getView(ControllerConstant.CREATE);
+	public String create(@ModelAttribute(value = ControllerConstant.EMPLOYEE) final Employee employee,
+			final BindingResult bindingResult, final Model model) {
+		this.employeeService.save(employee);
+		return this.redirectView(URLConstant.CREATE);
 	}
 
 	/**
@@ -88,7 +94,8 @@ public class EmployeeController {
 	 */
 	@GetMapping(value = URLConstant.PARAM_EDIT)
 	public String edit(@PathVariable("id") final String id, final Model model) {
-		return this.getView(ControllerConstant.EDIT);
+		model.addAttribute(ControllerConstant.EMPLOYEE, this.employeeService.findById(Integer.valueOf(id)));
+		return this.forward(ControllerConstant.EDIT);
 	}
 
 	/**
@@ -103,7 +110,8 @@ public class EmployeeController {
 	@PostMapping(value = URLConstant.PARAM_EDIT)
 	public String edit(@PathVariable("id") final String id, @ModelAttribute final Employee employee,
 			final BindingResult bindingResult, final Model model) {
-		return this.getView(ControllerConstant.EDIT);
+		this.employeeService.update(employee);
+		return this.redirectView(URLConstant.PARAM_EDIT);
 	}
 
 	/**
@@ -114,7 +122,7 @@ public class EmployeeController {
 	 */
 	@GetMapping(value = URLConstant.PARAM_DETAIL)
 	public String detail(final Model model) {
-		return this.getView(ControllerConstant.DETAIL);
+		return this.forward(ControllerConstant.DETAIL);
 	}
 
 	/**
@@ -125,7 +133,7 @@ public class EmployeeController {
 	 */
 	@GetMapping(value = URLConstant.DELETE)
 	public String delete(final Model model) {
-		return this.getView(ControllerConstant.LIST);
+		return this.forward(ControllerConstant.LIST);
 	}
 
 	/**
@@ -138,6 +146,6 @@ public class EmployeeController {
 	public String list(final Model model) {
 		final Collection<Employee> employees = this.employeeService.getAll();
 		model.addAttribute(ControllerConstant.EMPLOYEES, employees);
-		return this.getView(ControllerConstant.LIST);
+		return this.forward(ControllerConstant.LIST);
 	}
 }

@@ -56,7 +56,7 @@ public class DepartmentController {
 	 * @param pageName the page name
 	 * @return the view
 	 */
-	private String getView(String pageName) {
+	private String forward(String pageName) {
 		return new StringBuilder(PathConstant.DEPARTMENT_PATH).append(PathConstant.PATH).append(pageName).toString();
 	}
 
@@ -68,7 +68,7 @@ public class DepartmentController {
 	 */
 	@GetMapping(value = URLConstant.CREATE)
 	public String create(final Model model) {
-		return this.getView(ControllerConstant.CREATE);
+		return this.forward(ControllerConstant.CREATE);
 	}
 
 	/**
@@ -82,7 +82,7 @@ public class DepartmentController {
 	@PostMapping(value = URLConstant.CREATE)
 	public String create(@ModelAttribute final Department department, final BindingResult bindingResult,
 			final Model model) {
-		return this.getView(ControllerConstant.CREATE);
+		return this.forward(ControllerConstant.CREATE);
 	}
 
 	/**
@@ -94,7 +94,7 @@ public class DepartmentController {
 	 */
 	@GetMapping(value = URLConstant.PARAM_EDIT)
 	public String edit(@PathVariable("id") final String id, final Model model) {
-		return this.getView(ControllerConstant.EDIT);
+		return this.forward(ControllerConstant.EDIT);
 	}
 
 	/**
@@ -109,7 +109,7 @@ public class DepartmentController {
 	@PostMapping(value = URLConstant.PARAM_EDIT)
 	public String edit(@PathVariable("id") final String id, @ModelAttribute final Department department,
 			final BindingResult bindingResult, final Model model) {
-		return this.getView(ControllerConstant.EDIT);
+		return this.forward(ControllerConstant.EDIT);
 	}
 
 	/**
@@ -120,7 +120,7 @@ public class DepartmentController {
 	 */
 	@GetMapping(value = URLConstant.PARAM_DETAIL)
 	public String detail(final Model model) {
-		return this.getView(ControllerConstant.DETAIL);
+		return this.forward(ControllerConstant.DETAIL);
 	}
 
 	/**
@@ -131,7 +131,7 @@ public class DepartmentController {
 	 */
 	@GetMapping(value = URLConstant.DELETE)
 	public String delete(final Model model) {
-		return this.getView(ControllerConstant.LIST);
+		return this.forward(ControllerConstant.LIST);
 	}
 
 	/**
@@ -144,6 +144,6 @@ public class DepartmentController {
 	public String list(final Model model) {
 		final Collection<Department> departments = this.departmentService.getAll();
 		model.addAttribute(ControllerConstant.EMPLOYEES, departments);
-		return this.getView(ControllerConstant.LIST);
+		return this.forward(ControllerConstant.LIST);
 	}
 }
