@@ -42,8 +42,8 @@ public class DepartmentServiceImpl implements DepartmentService {
 	 * entity .Department)
 	 */
 	@Override
-	public int save(Department employee) {
-		return this.departmentDao.save(employee);
+	public int save(Department department) {
+		return this.departmentDao.save(department);
 	}
 
 	/*
@@ -54,8 +54,8 @@ public class DepartmentServiceImpl implements DepartmentService {
 	 * entity.Department)
 	 */
 	@Override
-	public int update(Department employee) {
-		return this.departmentDao.update(employee);
+	public int update(Department department) {
+		return this.departmentDao.update(department);
 	}
 
 	/*
@@ -66,8 +66,8 @@ public class DepartmentServiceImpl implements DepartmentService {
 	 * entity.Department)
 	 */
 	@Override
-	public void delete(Department employee) {
-		this.departmentDao.delete(employee);
+	public void delete(Department department) {
+		this.departmentDao.delete(department);
 	}
 
 	/*
