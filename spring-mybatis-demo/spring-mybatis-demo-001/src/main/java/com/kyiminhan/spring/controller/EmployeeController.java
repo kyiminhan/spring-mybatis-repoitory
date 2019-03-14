@@ -23,12 +23,18 @@ import lombok.Setter;
  *
  * @author KYIMINHAN </BR>
  * @version 1.0 </BR>
- * @since Mar 14, 2019 </BR>
+ * @since 2019/03/14 </BR>
  *        spring-mybatis-demo-001 system </BR>
  *        com.kyiminhan.spring.controller </BR>
  *        EmployeeController.java </BR>
  */
 @Controller
+
+/**
+ * Sets the employee service.
+ *
+ * @param employeeService the new employee service
+ */
 @Setter(onMethod = @__(@Autowired))
 public class EmployeeController {
 

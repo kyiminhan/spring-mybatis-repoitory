@@ -20,9 +20,9 @@ import lombok.Setter;
 /**
  * The Class AppConfig.</BR>
  *
- * @author kyiminhan </BR>
+ * @author KYIMINHAN </BR>
  * @version 1.0 </BR>
- * @since 2019/03/13 </BR>
+ * @since 2019/03/14 </BR>
  *        spring-mybatis-demo-001 system </BR>
  *        com.kyiminhan.spring.config </BR>
  *        AppConfig.java </BR>
@@ -32,11 +32,23 @@ import lombok.Setter;
 @EnableAspectJAutoProxy
 @ComponentScan(basePackages = { "com.kyiminhan.spring" })
 @PropertySource(value = "classpath:application.properties")
+
+/**
+ * Sets the application context.
+ *
+ * @param applicationContext the new application context
+ */
+@Setter(onMethod = @__(@Autowired))
 public class AppConfig implements WebMvcConfigurer {
 
-	@Setter(onMethod = @__(@Autowired))
+	/** The application context. */
 	private ApplicationContext applicationContext;
 
+	/**
+	 * Template resolver.
+	 *
+	 * @return SpringResourceTemplateResolver
+	 */
 	@Bean
 	public SpringResourceTemplateResolver templateResolver() {
 		final SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
@@ -48,6 +60,11 @@ public class AppConfig implements WebMvcConfigurer {
 		return templateResolver;
 	}
 
+	/**
+	 * Template engine.
+	 *
+	 * @return SpringTemplateEngine
+	 */
 	@Bean
 	public SpringTemplateEngine templateEngine() {
 		final SpringTemplateEngine templateEngine = new SpringTemplateEngine();
@@ -57,6 +74,11 @@ public class AppConfig implements WebMvcConfigurer {
 		return templateEngine;
 	}
 
+	/**
+	 * View resolver.
+	 *
+	 * @return ThymeleafViewResolver
+	 */
 	@Bean
 	public ThymeleafViewResolver viewResolver() {
 		final ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
@@ -64,11 +86,23 @@ public class AppConfig implements WebMvcConfigurer {
 		return viewResolver;
 	}
 
+	/**
+	 * Java 8 time dialect.
+	 *
+	 * @return Java8TimeDialect
+	 */
 	@Bean
 	public Java8TimeDialect java8TimeDialect() {
 		return new Java8TimeDialect();
 	}
 
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see org.springframework.web.servlet.config.annotation.WebMvcConfigurer#
+	 * addResourceHandlers(org.springframework.web.servlet.config.annotation.
+	 * ResourceHandlerRegistry)
+	 */
 	@Override
 	public void addResourceHandlers(final ResourceHandlerRegistry registry) {
 		WebMvcConfigurer.super.addResourceHandlers(registry);

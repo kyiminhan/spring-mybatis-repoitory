@@ -10,7 +10,7 @@ import lombok.Setter;
 /**
  * The Class Employee.</BR>
  *
- * @author kyiminhan </BR>
+ * @author KYIMINHAN </BR>
  * @version 1.0 </BR>
  * @since 2019/03/13 </BR>
  * spring-mybatis-demo-001 system </BR>

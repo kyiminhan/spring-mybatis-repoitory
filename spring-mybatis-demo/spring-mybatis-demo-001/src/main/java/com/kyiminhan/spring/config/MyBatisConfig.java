@@ -21,7 +21,7 @@ import lombok.Setter;
 /**
  * The Class MyBatisConfig.</BR>
  *
- * @author kyiminhan </BR>
+ * @author KYIMINHAN </BR>
  * @version 1.0 </BR>
  * @since 2019/03/13 </BR>
  *        spring-mybatis-demo-001 system </BR>
@@ -35,8 +35,14 @@ import lombok.Setter;
 @Setter(onMethod = @__(@Autowired))
 public class MyBatisConfig {
 
+	/** The env. */
 	private Environment env;
 
+	/**
+	 * Gets the data source.
+	 *
+	 * @return the data source
+	 */
 	@Bean
 	public DataSource getDataSource() {
 		final BasicDataSource dataSource = new BasicDataSource();
@@ -47,11 +53,22 @@ public class MyBatisConfig {
 		return dataSource;
 	}
 
+	/**
+	 * Gets the data source transaction manager.
+	 *
+	 * @return the data source transaction manager
+	 */
 	@Bean
 	public DataSourceTransactionManager getDataSourceTransactionManager() {
 		return new DataSourceTransactionManager(this.getDataSource());
 	}
 
+	/**
+	 * Gets the sql session factory bean.
+	 *
+	 * @return the sql session factory bean
+	 * @throws Exception the exception
+	 */
 	@Bean
 	public SqlSessionFactory getSqlSessionFactoryBean() throws Exception {
 		final SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();

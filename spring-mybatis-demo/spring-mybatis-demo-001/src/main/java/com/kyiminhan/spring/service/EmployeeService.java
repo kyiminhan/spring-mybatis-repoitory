@@ -7,7 +7,7 @@ import com.kyiminhan.spring.entity.Employee;
 /**
  * The Interface EmployeeService.</BR>
  *
- * @author kyiminhan </BR>
+ * @author KYIMINHAN </BR>
  * @version 1.0 </BR>
  * @since 2019/03/13 </BR>
  *        spring-mybatis-demo-001 system </BR>
