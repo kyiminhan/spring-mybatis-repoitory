@@ -15,34 +15,40 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.kyiminhan.spring.constant.ControllerConstant;
 import com.kyiminhan.spring.constant.PathConstant;
 import com.kyiminhan.spring.constant.URLConstant;
-import com.kyiminhan.spring.entity.Employee;
-import com.kyiminhan.spring.service.EmployeeService;
+import com.kyiminhan.spring.entity.Department;
+import com.kyiminhan.spring.service.DepartmentService;
 
 import lombok.Setter;
 
 /**
- * The Class EmployeeController.</BR>
+ * The Class DepartmentController.</BR>
  *
  * @author KYIMINHAN </BR>
  * @version 1.0 </BR>
  * @since 2019/03/14 </BR>
  *        spring-mybatis-demo-001 system </BR>
  *        com.kyiminhan.spring.controller </BR>
- *        EmployeeController.java </BR>
+ *        DepartmentController.java </BR>
  */
 @Controller
-@RequestMapping(path = PathConstant.EMPLOYEE_PATH)
+@RequestMapping(path = PathConstant.DEPARTMENT_PATH)
 
 /**
- * Sets the employee service.
+ * Sets the department service.
  *
- * @param employeeService the new employee service
+ * @param departmentService the new department service
+ */
+
+/**
+ * Sets the department service.
+ *
+ * @param departmentService the new department service
  */
 @Setter(onMethod = @__(@Autowired))
-public class EmployeeController {
+public class DepartmentController {
 
-	/** The employee service. */
-	private EmployeeService employeeService;
+	/** The department service. */
+	private DepartmentService departmentService;
 
 	/**
 	 * Gets the view.
@@ -51,7 +57,7 @@ public class EmployeeController {
 	 * @return the view
 	 */
 	private String getView(String pageName) {
-		return new StringBuilder(PathConstant.EMPLOYEE_PATH).append(PathConstant.PATH).append(pageName).toString();
+		return new StringBuilder(PathConstant.DEPARTMENT_PATH).append(PathConstant.PATH).append(pageName).toString();
 	}
 
 	/**
@@ -68,13 +74,13 @@ public class EmployeeController {
 	/**
 	 * Creates the.
 	 *
-	 * @param employee      the employee
+	 * @param department    the department
 	 * @param bindingResult the binding result
 	 * @param model         the model
 	 * @return String
 	 */
 	@PostMapping(value = URLConstant.CREATE)
-	public String create(@ModelAttribute final Employee employee, final BindingResult bindingResult,
+	public String create(@ModelAttribute final Department department, final BindingResult bindingResult,
 			final Model model) {
 		return this.getView(ControllerConstant.CREATE);
 	}
@@ -95,13 +101,13 @@ public class EmployeeController {
 	 * Edits the.
 	 *
 	 * @param id            the id
-	 * @param employee      the employee
+	 * @param department    the department
 	 * @param bindingResult the binding result
 	 * @param model         the model
 	 * @return String
 	 */
 	@PostMapping(value = URLConstant.PARAM_EDIT)
-	public String edit(@PathVariable("id") final String id, @ModelAttribute final Employee employee,
+	public String edit(@PathVariable("id") final String id, @ModelAttribute final Department department,
 			final BindingResult bindingResult, final Model model) {
 		return this.getView(ControllerConstant.EDIT);
 	}
@@ -136,8 +142,8 @@ public class EmployeeController {
 	 */
 	@GetMapping(value = { URLConstant.DEFAULT, URLConstant.LIST })
 	public String list(final Model model) {
-		final Collection<Employee> employees = this.employeeService.getAll();
-		model.addAttribute(ControllerConstant.EMPLOYEES, employees);
+		final Collection<Department> departments = this.departmentService.getAll();
+		model.addAttribute(ControllerConstant.EMPLOYEES, departments);
 		return this.getView(ControllerConstant.LIST);
 	}
 }

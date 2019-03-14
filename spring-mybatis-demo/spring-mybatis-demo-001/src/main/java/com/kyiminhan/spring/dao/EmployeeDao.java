@@ -1,7 +1,5 @@
 package com.kyiminhan.spring.dao;
 
-import java.util.Collection;
-
 import com.kyiminhan.spring.entity.Employee;
 
 /**
@@ -14,32 +12,6 @@ import com.kyiminhan.spring.entity.Employee;
  *        com.kyiminhan.spring.dao </BR>
  *        EmployeeDao.java </BR>
  */
-public interface EmployeeDao {
-	/**
-	 * Save.
-	 *
-	 * @param employee the employee
-	 */
-	int save(Employee employee);
+public interface EmployeeDao extends BaseDao<Employee> {
 
-	/**
-	 * Update.
-	 *
-	 * @param employee the employee
-	 */
-	int update(Employee employee);
-
-	/**
-	 * Delete.
-	 *
-	 * @param employee the employee
-	 */
-	void delete(Employee employee);
-
-	/**
-	 * Gets the all.
-	 *
-	 * @return the all
-	 */
-	Collection<Employee> getAll();
 }

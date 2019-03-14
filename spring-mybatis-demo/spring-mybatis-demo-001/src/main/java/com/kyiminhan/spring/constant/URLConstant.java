@@ -42,4 +42,6 @@ public interface URLConstant {
 	/** The param delete. */
 	String PARAM_DELETE = "/{id}/delete";
 
+	/** The home. */
+	String HOME = "/home";
 }

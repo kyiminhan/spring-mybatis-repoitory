@@ -13,7 +13,7 @@ package com.kyiminhan.spring.constant;
 public interface ControllerConstant {
 
 	/** The create. */
-	String CREATE_VIEW = "create";
+	String CREATE = "create";
 
 	/** The edit. */
 	String EDIT = "edit";
@@ -26,4 +26,6 @@ public interface ControllerConstant {
 
 	String EMPLOYEES = "employees";
 
+	/** The home. */
+	String HOME = "home";
 }
