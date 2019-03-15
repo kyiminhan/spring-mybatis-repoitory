@@ -62,7 +62,7 @@ CREATE TABLE `employee` (
 
 LOCK TABLES `employee` WRITE;
 /*!40000 ALTER TABLE `employee` DISABLE KEYS */;
-INSERT INTO `employee` VALUES (1,'Kyi Min Han','kyiminhan@gicjp.biz','Tokyo, Japan','0987654321'),(3,'KMH,KMH','kmh@gmail.com','Tokyo, Japan','123412412'),(4,'KMH','kmh@gmail.com','Tokyo','123412412'),(5,'Kyi Min Han','kyiminhan.jpn@gmail.com','東京都江東区大島4丁目1番6－707号','+81 80 9342 5608');
+INSERT INTO `employee` VALUES (1,'Kyi Min Han','kyiminhan@gicjp.biz','Tokyo, Japan','0987654321'),(3,'KMH,KMH','kmh@gmail.com','Tokyo, Japan','123412412'),(4,'KMH','kmh@gmail.com','Tokyo','123412412'),(5,'Kyi Min Han','kyiminhan.jpn@gmail.com','東京都江東区大島1丁目11番3－907号','+81 80 2222 2222');
 /*!40000 ALTER TABLE `employee` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
