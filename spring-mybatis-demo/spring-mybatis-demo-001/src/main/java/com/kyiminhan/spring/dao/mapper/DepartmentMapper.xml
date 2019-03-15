@@ -3,27 +3,47 @@
 	namespace="com.kyiminhan.spring.dao.mapper.DepartmentMapper">
 	<cache />
 
-	<insert id="save"
-		parameterType="com.kyiminhan.spring.entity.Department">
-		<!-- TODO -->
+	<insert id="save" useGeneratedKeys="true" keyProperty="id"
+		keyColumn="id" parameterType="com.kyiminhan.spring.entity.Department"
+		flushCache="true" statementType="PREPARED" timeout="20">
+
+		INSERT INTO
+		DEPARTMENT
+		(DEPARTMENTNAME)
+		VALUE
+		(#{departmentName})
 	</insert>
 
 	<update id="update"
-		parameterType="com.kyiminhan.spring.entity.Department">
-		<!-- TODO -->
+		parameterType="com.kyiminhan.spring.entity.Department" flushCache="true"
+		statementType="PREPARED" timeout="20">
+
+		UPDATE DEPARTMENT
+		SET
+		DEPARTMENTNAME = #{departmentName}
+		WHERE ID = #{id}
 	</update>
 
-	<update id="findById"
-		parameterType="com.kyiminhan.spring.entity.Department">
-		<!-- TODO -->
-	</update>
+	<select id="findById" parameterType="Integer"
+		resultType="com.kyiminhan.spring.entity.Department" flushCache="true"
+		statementType="PREPARED" timeout="20">
 
-	<update id="delete"
-		parameterType="com.kyiminhan.spring.entity.Department">
-		<!-- TODO -->
-	</update>
+		SELECT *
+		FROM DEPARTMENT
+		WHERE ID = #{ID}
+
+	</select>
+
+	<delete id="delete"
+		parameterType="com.kyiminhan.spring.entity.Department" flushCache="true"
+		statementType="PREPARED" timeout="20">
+
+		DELETE
+		FROM DEPARTMENT
+		WHERE ID = #{id}
+	</delete>
 
 	<select id="getAll" resultType="hashmap">
-		select * from Department
+		SELECT * FROM DEPARTMENT
 	</select>
 </mapper>

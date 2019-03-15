@@ -24,11 +24,18 @@ public interface ControllerConstant {
 	/** The list. */
 	String LIST = "list";
 
-	String EMPLOYEES = "employees";
-
 	/** The home. */
 	String HOME = "home";
 
 	/** The employee. */
 	String EMPLOYEE = "employee";
+	/** The employees. */
+
+	String EMPLOYEES = "employees";
+
+	/** The depatrment. */
+	String DEPATRMENT = "department";
+
+	/** The depatrments. */
+	String DEPATRMENTS = "departments";
 }

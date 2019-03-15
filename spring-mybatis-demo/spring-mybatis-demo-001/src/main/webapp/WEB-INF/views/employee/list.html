@@ -47,9 +47,11 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="employee : ${employees}">
-							<td class="text-right" th:text="${employee.id}"></td>
-							<td th:text="${employee.name}"></td>
+						<tr th:each="employee,iterStat : ${employees}">
+							<td class="text-center" th:text="${iterStat.count}"></td>
+							<td><a class="text-decoration-none"
+								th:href="@{/employee/__${employee.id}__/detail}"
+								th:text="${employee.name}" style="text-decoration: none"></a></td>
 							<td th:text="${employee.email}"></td>
 							<td th:text="${employee.address}"></td>
 							<td th:text="${employee.phone}"></td>

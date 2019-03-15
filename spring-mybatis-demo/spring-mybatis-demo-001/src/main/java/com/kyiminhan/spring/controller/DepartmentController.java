@@ -25,19 +25,13 @@ import lombok.Setter;
  *
  * @author KYIMINHAN </BR>
  * @version 1.0 </BR>
- * @since 2019/03/14 </BR>
+ * @since 2019/03/15 </BR>
  *        spring-mybatis-demo-001 system </BR>
  *        com.kyiminhan.spring.controller </BR>
  *        DepartmentController.java </BR>
  */
 @Controller
 @RequestMapping(path = PathConstant.DEPARTMENT_PATH)
-
-/**
- * Sets the department service.
- *
- * @param departmentService the new department service
- */
 
 /**
  * Sets the department service.
@@ -60,6 +54,10 @@ public class DepartmentController {
 		return new StringBuilder(PathConstant.DEPARTMENT_PATH).append(PathConstant.PATH).append(pageName).toString();
 	}
 
+	private String redirect(String url) {
+		return new StringBuilder(URLConstant.REDIRECT).append(PathConstant.DEPATRMENT_PATH).append(url).toString();
+	}
+
 	/**
 	 * Creates the.
 	 *
@@ -68,6 +66,7 @@ public class DepartmentController {
 	 */
 	@GetMapping(value = URLConstant.CREATE)
 	public String create(final Model model) {
+		model.addAttribute(ControllerConstant.DEPATRMENT, Department.builder().build());
 		return this.forward(ControllerConstant.CREATE);
 	}
 
@@ -80,9 +79,10 @@ public class DepartmentController {
 	 * @return String
 	 */
 	@PostMapping(value = URLConstant.CREATE)
-	public String create(@ModelAttribute final Department department, final BindingResult bindingResult,
-			final Model model) {
-		return this.forward(ControllerConstant.CREATE);
+	public String create(@ModelAttribute(value = ControllerConstant.DEPATRMENT) final Department department,
+			final BindingResult bindingResult, final Model model) {
+		this.departmentService.save(department);
+		return this.redirect(URLConstant.CREATE);
 	}
 
 	/**
@@ -94,6 +94,7 @@ public class DepartmentController {
 	 */
 	@GetMapping(value = URLConstant.PARAM_EDIT)
 	public String edit(@PathVariable("id") final String id, final Model model) {
+		model.addAttribute(ControllerConstant.DEPATRMENT, this.departmentService.findById(Integer.valueOf(id)));
 		return this.forward(ControllerConstant.EDIT);
 	}
 
@@ -109,7 +110,8 @@ public class DepartmentController {
 	@PostMapping(value = URLConstant.PARAM_EDIT)
 	public String edit(@PathVariable("id") final String id, @ModelAttribute final Department department,
 			final BindingResult bindingResult, final Model model) {
-		return this.forward(ControllerConstant.EDIT);
+		this.departmentService.update(department);
+		return this.redirect(URLConstant.PARAM_EDIT);
 	}
 
 	/**
@@ -119,7 +121,8 @@ public class DepartmentController {
 	 * @return String
 	 */
 	@GetMapping(value = URLConstant.PARAM_DETAIL)
-	public String detail(final Model model) {
+	public String detail(@PathVariable("id") final String id, final Model model) {
+		model.addAttribute(ControllerConstant.DEPATRMENT, this.departmentService.findById(Integer.valueOf(id)));
 		return this.forward(ControllerConstant.DETAIL);
 	}
 
@@ -129,9 +132,10 @@ public class DepartmentController {
 	 * @param model the model
 	 * @return String
 	 */
-	@GetMapping(value = URLConstant.DELETE)
-	public String delete(final Model model) {
-		return this.forward(ControllerConstant.LIST);
+	@GetMapping(value = URLConstant.PARAM_DELETE)
+	public String delete(@PathVariable("id") final String id, final Model model) {
+		this.departmentService.delete(this.departmentService.findById(Integer.valueOf(id)));
+		return this.redirect(URLConstant.LIST);
 	}
 
 	/**
@@ -143,7 +147,7 @@ public class DepartmentController {
 	@GetMapping(value = { URLConstant.DEFAULT, URLConstant.LIST })
 	public String list(final Model model) {
 		final Collection<Department> departments = this.departmentService.getAll();
-		model.addAttribute(ControllerConstant.EMPLOYEES, departments);
+		model.addAttribute(ControllerConstant.DEPATRMENTS, departments);
 		return this.forward(ControllerConstant.LIST);
 	}
 }

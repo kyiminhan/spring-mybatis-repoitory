@@ -54,7 +54,7 @@ public class EmployeeController {
 		return new StringBuilder(PathConstant.EMPLOYEE_PATH).append(PathConstant.PATH).append(pageName).toString();
 	}
 
-	private String redirectView(String url) {
+	private String redirect(String url) {
 		return new StringBuilder(URLConstant.REDIRECT).append(PathConstant.EMPLOYEE_PATH).append(url).toString();
 	}
 
@@ -82,7 +82,7 @@ public class EmployeeController {
 	public String create(@ModelAttribute(value = ControllerConstant.EMPLOYEE) final Employee employee,
 			final BindingResult bindingResult, final Model model) {
 		this.employeeService.save(employee);
-		return this.redirectView(URLConstant.CREATE);
+		return this.redirect(URLConstant.CREATE);
 	}
 
 	/**
@@ -111,7 +111,7 @@ public class EmployeeController {
 	public String edit(@PathVariable("id") final String id, @ModelAttribute final Employee employee,
 			final BindingResult bindingResult, final Model model) {
 		this.employeeService.update(employee);
-		return this.redirectView(URLConstant.PARAM_EDIT);
+		return this.redirect(URLConstant.PARAM_EDIT);
 	}
 
 	/**
@@ -121,7 +121,8 @@ public class EmployeeController {
 	 * @return String
 	 */
 	@GetMapping(value = URLConstant.PARAM_DETAIL)
-	public String detail(final Model model) {
+	public String detail(@PathVariable("id") final String id, final Model model) {
+		model.addAttribute(ControllerConstant.EMPLOYEE, this.employeeService.findById(Integer.valueOf(id)));
 		return this.forward(ControllerConstant.DETAIL);
 	}
 
@@ -131,9 +132,10 @@ public class EmployeeController {
 	 * @param model the model
 	 * @return String
 	 */
-	@GetMapping(value = URLConstant.DELETE)
-	public String delete(final Model model) {
-		return this.forward(ControllerConstant.LIST);
+	@GetMapping(value = URLConstant.PARAM_DELETE)
+	public String delete(@PathVariable("id") final String id, final Model model) {
+		this.employeeService.delete(this.employeeService.findById(Integer.valueOf(id)));
+		return this.redirect(URLConstant.LIST);
 	}
 
 	/**

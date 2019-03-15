@@ -20,4 +20,7 @@ public interface PathConstant {
 
 	/** The department path. */
 	String DEPARTMENT_PATH = "/department";
+
+	/** The depatrment path. */
+	Object DEPATRMENT_PATH = "/department";
 }

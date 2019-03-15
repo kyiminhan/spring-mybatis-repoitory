@@ -29,8 +29,8 @@
 	<main role="main" class="container">
 	<div class="jumbotron"
 		style="height: 100vh; padding-top: 8rem; margin-bottom: 0px;">
-		<form th:action="@{/employee/list}" th:method="get"
-			th:object="${employee}">
+		<form th:action="@{/employee/__${employee.id}__/edit}"
+			th:method="post" th:object="${employee}">
 			<div class="row justify-content-center">
 				<div class="col-md-9">
 					<div class="row justify-content-center">
@@ -42,7 +42,7 @@
 								</div>
 								<input type="text" class="form-control" th:field="*{name}"
 									placeholder="Employee Name" aria-label="employeeName"
-									aria-describedby="basic-addon1">
+									aria-describedby="basic-addon1" readonly="readonly">
 							</div>
 						</div>
 					</div>
@@ -55,7 +55,7 @@
 								</div>
 								<input type="text" class="form-control" th:field="*{email}"
 									placeholder="Employee Email" aria-label="employeeEmail"
-									aria-describedby="basic-addon2">
+									aria-describedby="basic-addon2" readonly="readonly">
 							</div>
 						</div>
 					</div>
@@ -68,7 +68,7 @@
 								</div>
 								<textarea class="form-control" th:field="*{address}"
 									placeholder="Employee Address" aria-label="employeeAddress"
-									aria-describedby="basic-addon3" rows="3"></textarea>
+									aria-describedby="basic-addon3" rows="3" readonly="readonly"></textarea>
 							</div>
 						</div>
 					</div>
@@ -81,12 +81,13 @@
 								</div>
 								<input type="text" class="form-control" th:field="*{phone}"
 									placeholder="Employee Phone" aria-label="employeePhone"
-									aria-describedby="basic-addon4">
+									aria-describedby="basic-addon4" readonly="readonly">
 							</div>
 						</div>
 					</div>
 					<div class="row justify-content-center">
-						<button type="submit" class="btn btn-sm btn-outline-success mt-4 ">Success</button>
+						<a class="btn btn-sm btn-outline-success mt-4 mr-2 col-md-2"
+							th:href="@{/employee/list}">Cancel</a>
 					</div>
 
 				</div>

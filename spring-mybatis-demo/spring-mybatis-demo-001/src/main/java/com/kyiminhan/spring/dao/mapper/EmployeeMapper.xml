@@ -43,7 +43,7 @@
 
 		DELETE
 		FROM EMPLOYEE
-		WEHRE ID = #{id}
+		WHERE ID = #{id}
 	</delete>
 
 	<select id="getAll" resultType="hashmap">

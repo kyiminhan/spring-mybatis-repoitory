@@ -42,7 +42,7 @@
 								</div>
 								<input type="text" class="form-control" th:field="*{name}"
 									placeholder="Employee Name" aria-label="employeeName"
-									aria-describedby="basic-addon1">
+									aria-describedby="basic-addon1" required="required">
 							</div>
 						</div>
 					</div>
@@ -53,9 +53,9 @@
 									<span class="input-group-text mr-2 far fa-envelope"
 										id="basic-addon2"></span>
 								</div>
-								<input type="text" class="form-control" th:field="*{email}"
+								<input type="email" class="form-control" th:field="*{email}"
 									placeholder="Employee Email" aria-label="employeeEmail"
-									aria-describedby="basic-addon2">
+									aria-describedby="basic-addon2" required="required">
 							</div>
 						</div>
 					</div>
@@ -68,7 +68,7 @@
 								</div>
 								<textarea class="form-control" th:field="*{address}"
 									placeholder="Employee Address" aria-label="employeeAddress"
-									aria-describedby="basic-addon3" rows="3"></textarea>
+									aria-describedby="basic-addon3" rows="3" required="required"></textarea>
 							</div>
 						</div>
 					</div>
@@ -81,13 +81,15 @@
 								</div>
 								<input type="text" class="form-control" th:field="*{phone}"
 									placeholder="Employee Phone" aria-label="employeePhone"
-									aria-describedby="basic-addon4">
+									aria-describedby="basic-addon4" required="required">
 							</div>
 						</div>
 					</div>
 					<div class="row justify-content-center">
-						<a class="btn btn-sm btn-outline-success mt-4 mr-2 col-md-2" th:href="@{/employee/list}">Cancel</a>
-						<button type="submit" class="btn btn-sm btn-outline-success mt-4 ml-2 col-md-2">Edit</button>
+						<a class="btn btn-sm btn-outline-success mt-4 mr-2 col-md-2"
+							th:href="@{/employee/list}">Cancel</a>
+						<button type="submit"
+							class="btn btn-sm btn-outline-success mt-4 ml-2 col-md-2">Edit</button>
 					</div>
 
 				</div>
