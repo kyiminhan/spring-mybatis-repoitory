@@ -1,5 +1,10 @@
 package com.kyiminhan.spring.config;
 
+import java.nio.charset.StandardCharsets;
+
+import javax.servlet.Filter;
+
+import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 /**
@@ -47,5 +52,20 @@ public class AppInitializer extends AbstractAnnotationConfigDispatcherServletIni
 	@Override
 	protected String[] getServletMappings() {
 		return new String[] { "/" };
+	}
+
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see
+	 * org.springframework.web.servlet.support.AbstractDispatcherServletInitializer#
+	 * getServletFilters()
+	 */
+	@Override
+	protected Filter[] getServletFilters() {
+		final CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
+		characterEncodingFilter.setEncoding(StandardCharsets.UTF_8.name());
+		characterEncodingFilter.setForceEncoding(true);
+		return new Filter[] { characterEncodingFilter };
 	}
 }

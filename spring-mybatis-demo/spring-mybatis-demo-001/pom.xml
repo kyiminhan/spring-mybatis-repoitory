@@ -9,6 +9,9 @@
 	</parent>
 	<artifactId>spring-mybatis-demo-001</artifactId>
 	<packaging>war</packaging>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 	<build>
 		<plugins>
 			<plugin>

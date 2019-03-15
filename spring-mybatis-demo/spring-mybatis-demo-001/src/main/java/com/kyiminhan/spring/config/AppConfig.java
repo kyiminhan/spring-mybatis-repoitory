@@ -1,5 +1,7 @@
 package com.kyiminhan.spring.config;
 
+import java.nio.charset.StandardCharsets;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -56,6 +58,7 @@ public class AppConfig implements WebMvcConfigurer {
 		templateResolver.setPrefix("/WEB-INF/views/");
 		templateResolver.setSuffix(".html");
 		templateResolver.setTemplateMode("HTML5");
+		templateResolver.setCharacterEncoding(StandardCharsets.UTF_8.name());
 		templateResolver.setCacheable(false);
 		return templateResolver;
 	}
@@ -82,6 +85,7 @@ public class AppConfig implements WebMvcConfigurer {
 	@Bean
 	public ThymeleafViewResolver viewResolver() {
 		final ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
+		viewResolver.setContentType("text/html; charset=UTF-8");
 		viewResolver.setTemplateEngine(this.templateEngine());
 		return viewResolver;
 	}
