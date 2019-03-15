@@ -22,13 +22,77 @@
 	href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
 	integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
 	crossorigin="anonymous">
-<title>Home</title>
+<title>Employee Create</title>
 </head>
 <body>
 	<header th:replace="common/navbar.html :: navbar"> </header>
 	<main role="main" class="container">
 	<div class="jumbotron"
-		style="height: 100vh; padding-top: 8rem; margin-bottom: 0px;"></div>
+		style="height: 100vh; padding-top: 8rem; margin-bottom: 0px;">
+		<form th:action="@{/employee/list}" th:method="get"
+			th:object="${employee}">
+			<div class="row justify-content-center">
+				<div class="col-md-9">
+					<div class="row justify-content-center">
+						<div class="col-md-6">
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text mr-2 fas fa-user"
+										id="basic-addon1"></span>
+								</div>
+								<input type="text" class="form-control" th:field="*{name}"
+									placeholder="Employee Name" aria-label="employeeName"
+									aria-describedby="basic-addon1">
+							</div>
+						</div>
+					</div>
+					<div class="row justify-content-center">
+						<div class="col-md-6">
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text mr-2 far fa-envelope"
+										id="basic-addon2"></span>
+								</div>
+								<input type="text" class="form-control" th:field="*{email}"
+									placeholder="Employee Email" aria-label="employeeEmail"
+									aria-describedby="basic-addon2">
+							</div>
+						</div>
+					</div>
+					<div class="row justify-content-center">
+						<div class="col-md-6">
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text mr-2 fas fa-map-marked-alt"
+										id="basic-addon3"></span>
+								</div>
+								<textarea class="form-control" th:field="*{address}"
+									placeholder="Employee Address" aria-label="employeeAddress"
+									aria-describedby="basic-addon3" rows="3"></textarea>
+							</div>
+						</div>
+					</div>
+					<div class="row justify-content-center">
+						<div class="col-md-6">
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text mr-3 fas fa-mobile"
+										id="basic-addon4"></span>
+								</div>
+								<input type="text" class="form-control" th:field="*{phone}"
+									placeholder="Employee Phone" aria-label="employeePhone"
+									aria-describedby="basic-addon4">
+							</div>
+						</div>
+					</div>
+					<div class="row justify-content-center">
+						<button type="submit" class="btn btn-sm btn-outline-success mt-4 ">Success</button>
+					</div>
+
+				</div>
+			</div>
+		</form>
+	</div>
 	</main>
 
 	<!-- Optional JavaScript -->
