@@ -22,7 +22,7 @@ public interface DepartmentService {
 	 * @param Department the department
 	 * @return int
 	 */
-	int save(Department Department);
+	int save(Department department);
 
 	/**
 	 * Update.
@@ -30,14 +30,14 @@ public interface DepartmentService {
 	 * @param Department the department
 	 * @return int
 	 */
-	int update(Department Department);
+	int update(Department department);
 
 	/**
 	 * Delete.
 	 *
 	 * @param Department the department
 	 */
-	void delete(Department Department);
+	void delete(Department department);
 
 	/**
 	 * Find by id.
