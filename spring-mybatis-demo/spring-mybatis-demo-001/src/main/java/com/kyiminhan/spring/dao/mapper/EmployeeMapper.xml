@@ -47,6 +47,6 @@
 	</delete>
 
 	<select id="getAll" resultType="hashmap">
-		select * from employee
+		SELECT * FROM EMPLOYEE
 	</select>
 </mapper>
