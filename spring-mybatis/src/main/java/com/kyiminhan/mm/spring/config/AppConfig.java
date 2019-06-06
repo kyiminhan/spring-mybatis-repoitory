@@ -99,7 +99,7 @@ public class AppConfig implements WebMvcConfigurer {
 	 */
 	@Override
 	public void addResourceHandlers(final ResourceHandlerRegistry registry) {
-		WebMvcConfigurer.super.addResourceHandlers(registry);
 		registry.addResourceHandler("/static/**").addResourceLocations("/static/").setCachePeriod(31556926);
+		WebMvcConfigurer.super.addResourceHandlers(registry);
 	}
 }
