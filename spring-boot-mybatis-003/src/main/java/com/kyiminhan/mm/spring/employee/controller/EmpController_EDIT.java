@@ -6,9 +6,9 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.kyiminhan.mm.spring.domain.Employee;
 import com.kyiminhan.mm.spring.employee.service.EmployeeService;
@@ -38,8 +38,8 @@ public class EmpController_EDIT {
 	 * @param model the model
 	 * @return String
 	 */
-	@GetMapping(value = "/{id}/edit")
-	public String edit(@PathVariable("id") final String id, final Model model) {
+	@GetMapping(value = "/edit")
+	public String edit(@ModelAttribute("id") final String id, final Model model) {
 		model.addAttribute("employee", this.employeeService.findById(Integer.valueOf(id)));
 		return "/employee/edit";
 	}
@@ -47,16 +47,16 @@ public class EmpController_EDIT {
 	/**
 	 * Edits the.
 	 *
-	 * @param id the id
 	 * @param employee the employee
 	 * @param bindingResult the binding result
-	 * @param model the model
+	 * @param attributes the attributes
 	 * @return String
 	 */
-	@PostMapping(value = "/{id}/edit")
-	public String edit(@PathVariable("id") final String id, @ModelAttribute final Employee employee,
-			final BindingResult bindingResult, final Model model) {
+	@PostMapping(value = "/edit")
+	public String edit(@ModelAttribute("employee") final Employee employee, final BindingResult bindingResult,
+			final RedirectAttributes attributes) {
 		this.employeeService.update(employee);
-		return "redirect:/employee/{id}/edit";
+		attributes.addFlashAttribute("id", employee.getId());
+		return "redirect:/employee/edit";
 	}
 }

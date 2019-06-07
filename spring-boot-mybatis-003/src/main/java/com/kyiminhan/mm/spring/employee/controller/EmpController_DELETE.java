@@ -2,10 +2,10 @@ package com.kyiminhan.mm.spring.employee.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.kyiminhan.mm.spring.employee.service.EmployeeService;
 
@@ -31,11 +31,11 @@ public class EmpController_DELETE {
 	 * Delete.
 	 *
 	 * @param id the id
-	 * @param model the model
+	 * @param attributes the attributes
 	 * @return String
 	 */
-	@GetMapping(value = "/{id}/delete")
-	public String delete(@PathVariable("id") final String id, final Model model) {
+	@GetMapping(value = "/delete")
+	public String delete(@ModelAttribute("id") final String id, final RedirectAttributes attributes) {
 		this.employeeService.delete(this.employeeService.findById(Integer.valueOf(id)));
 		return "redirect:/employee/list";
 	}
