@@ -22,17 +22,8 @@ import com.kyiminhan.mm.spring.employee.dao.EmployeeDao;
 public class EmployeeServiceImpl implements EmployeeService {
 
 	/** The employee dao. */
-	private EmployeeDao employeeDao;
-
-	/**
-	 * Sets the employee dao.
-	 *
-	 * @param employeeDao the new employee dao
-	 */
 	@Autowired
-	public void setEmployeeDao(final EmployeeDao employeeDao) {
-		this.employeeDao = employeeDao;
-	}
+	private EmployeeDao employeeDao;
 
 	/**
 	 * Save.

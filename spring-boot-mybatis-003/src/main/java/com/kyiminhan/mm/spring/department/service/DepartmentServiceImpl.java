@@ -22,17 +22,8 @@ import com.kyiminhan.mm.spring.domain.Department;
 public class DepartmentServiceImpl implements DepartmentService {
 
 	/** The department dao. */
-	private DepartmentDao departmentDao;
-
-	/**
-	 * Sets the department dao.
-	 *
-	 * @param departmentDao the new department dao
-	 */
 	@Autowired
-	public void setDepartmentDao(final DepartmentDao departmentDao) {
-		this.departmentDao = departmentDao;
-	}
+	private DepartmentDao departmentDao;
 
 	/**
 	 * Save.
