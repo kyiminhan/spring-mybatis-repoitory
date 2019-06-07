@@ -1,0 +1,17 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.kyiminhan.mm.spring.department.mapper.DeptSQL01Mapper">
+
+	<insert id="execute" useGeneratedKeys="true" keyProperty="id"
+		keyColumn="id"
+		parameterType="com.kyiminhan.mm.spring.domain.Department"
+		flushCache="true" statementType="PREPARED" timeout="20">
+
+		INSERT INTO
+		DEPARTMENT
+		(DEPARTMENTNAME)
+		VALUE
+		(#{departmentName})
+	</insert>
+
+</mapper>

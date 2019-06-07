@@ -1,0 +1,14 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.kyiminhan.mm.spring.employee.mapper.EmpSQL04Mapper">
+
+	<delete id="execute"
+		parameterType="com.kyiminhan.mm.spring.domain.Employee"
+		flushCache="true" statementType="PREPARED" timeout="20">
+
+		DELETE
+		FROM EMPLOYEE
+		WHERE ID = #{id}
+	</delete>
+
+</mapper>

@@ -1,0 +1,15 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.kyiminhan.mm.spring.employee.mapper.EmpSQL03Mapper">
+
+	<select id="execute" parameterType="Integer"
+		resultType="com.kyiminhan.mm.spring.domain.Employee" flushCache="true"
+		statementType="PREPARED" timeout="20">
+
+		SELECT *
+		FROM EMPLOYEE
+		WHERE ID = #{ID}
+
+	</select>
+
+</mapper>
