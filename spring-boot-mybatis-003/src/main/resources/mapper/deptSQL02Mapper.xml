@@ -1,0 +1,15 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.kyiminhan.mm.spring.department.mapper.DeptSQL02Mapper">
+
+	<update id="execute"
+		parameterType="com.kyiminhan.mm.spring.domain.Department"
+		flushCache="true" statementType="PREPARED" timeout="20">
+
+		UPDATE DEPARTMENT
+		SET
+		DEPARTMENTNAME = #{departmentName}
+		WHERE ID = #{id}
+	</update>
+
+</mapper>
