@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.kyiminhan.mm.spring.department.service.DepartmentServiceImpl;
@@ -25,6 +26,7 @@ import com.kyiminhan.mm.spring.domain.Department;
  */
 @Controller
 @RequestMapping(path = "/department")
+@SessionAttributes(names = "departments")
 public class DeptController_LIST {
 
 	/** The department service. */
