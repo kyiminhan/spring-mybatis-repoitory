@@ -9,10 +9,10 @@ import com.kyiminhan.mm.spring.entity.Employee;
  *
  * @author KYIMINHAN </BR>
  * @version 1.0 </BR>
- * @since 2019/06/04 </BR>
- *        spring-mybatis system </BR>
- *        com.kyiminhan.mm.spring.dao </BR>
- *        EmployeeDao.java </BR>
+ * @since 2019/06/11 </BR>
+ * spring-mybatis system </BR>
+ * com.kyiminhan.mm.spring.dao </BR>
+ * EmployeeDao.java </BR>
  */
 public interface EmployeeDao {
 

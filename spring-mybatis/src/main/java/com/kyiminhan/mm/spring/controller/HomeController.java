@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.GetMapping;
  *
  * @author KYIMINHAN </BR>
  * @version 1.0 </BR>
- * @since 2019/06/04 </BR>
- *        spring-mybatis system </BR>
- *        com.kyiminhan.mm.spring.controller </BR>
- *        HomeController.java </BR>
+ * @since 2019/06/11 </BR>
+ * spring-mybatis system </BR>
+ * com.kyiminhan.mm.spring.controller </BR>
+ * HomeController.java </BR>
  */
 @Controller
 public class HomeController {

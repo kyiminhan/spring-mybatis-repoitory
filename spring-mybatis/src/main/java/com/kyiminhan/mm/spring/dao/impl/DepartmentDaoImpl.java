@@ -14,10 +14,10 @@ import com.kyiminhan.mm.spring.entity.Department;
  *
  * @author KYIMINHAN </BR>
  * @version 1.0 </BR>
- * @since 2019/06/04 </BR>
- *        spring-mybatis system </BR>
- *        com.kyiminhan.mm.spring.dao.impl </BR>
- *        DepartmentDaoImpl.java </BR>
+ * @since 2019/06/11 </BR>
+ * spring-mybatis system </BR>
+ * com.kyiminhan.mm.spring.dao.impl </BR>
+ * DepartmentDaoImpl.java </BR>
  */
 @Repository
 public class DepartmentDaoImpl implements DepartmentDao {

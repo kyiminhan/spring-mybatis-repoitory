@@ -1,7 +1,5 @@
 package com.kyiminhan.mm.spring.controller;
 
-import java.util.Collection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,10 +18,10 @@ import com.kyiminhan.mm.spring.service.DepartmentService;
  *
  * @author KYIMINHAN </BR>
  * @version 1.0 </BR>
- * @since 2019/06/04 </BR>
- *        spring-mybatis system </BR>
- *        com.kyiminhan.mm.spring.controller </BR>
- *        DepartmentController.java </BR>
+ * @since 2019/06/11 </BR>
+ * spring-mybatis system </BR>
+ * com.kyiminhan.mm.spring.controller </BR>
+ * DepartmentController.java </BR>
  */
 @Controller
 @RequestMapping(path = "/department")
@@ -77,9 +75,9 @@ public class DepartmentController {
 	/**
 	 * Creates the.
 	 *
-	 * @param department    the department
+	 * @param department the department
 	 * @param bindingResult the binding result
-	 * @param model         the model
+	 * @param model the model
 	 * @return String
 	 */
 	@PostMapping(value = "/create")
@@ -92,7 +90,7 @@ public class DepartmentController {
 	/**
 	 * Edits the.
 	 *
-	 * @param id    the id
+	 * @param id the id
 	 * @param model the model
 	 * @return String
 	 */
@@ -105,10 +103,10 @@ public class DepartmentController {
 	/**
 	 * Edits the.
 	 *
-	 * @param id            the id
-	 * @param department    the department
+	 * @param id the id
+	 * @param department the department
 	 * @param bindingResult the binding result
-	 * @param model         the model
+	 * @param model the model
 	 * @return String
 	 */
 	@PostMapping(value = "/{id}/edit")
@@ -121,7 +119,7 @@ public class DepartmentController {
 	/**
 	 * Detail.
 	 *
-	 * @param id    the id
+	 * @param id the id
 	 * @param model the model
 	 * @return String
 	 */
@@ -134,7 +132,7 @@ public class DepartmentController {
 	/**
 	 * Delete.
 	 *
-	 * @param id    the id
+	 * @param id the id
 	 * @param model the model
 	 * @return String
 	 */
@@ -150,10 +148,9 @@ public class DepartmentController {
 	 * @param model the model
 	 * @return String
 	 */
-	@GetMapping(value = { "/", "/list" })
+	@GetMapping(value = { "", "/", "/list" })
 	public String list(final Model model) {
-		final Collection<Department> departments = this.departmentService.getAll();
-		model.addAttribute("departments", departments);
+		model.addAttribute("departments", this.departmentService.getAll());
 		return this.forward("list");
 	}
 }

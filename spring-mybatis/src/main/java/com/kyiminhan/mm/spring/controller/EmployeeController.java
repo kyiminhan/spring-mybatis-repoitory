@@ -1,7 +1,5 @@
 package com.kyiminhan.mm.spring.controller;
 
-import java.util.Collection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,10 +18,10 @@ import com.kyiminhan.mm.spring.service.EmployeeService;
  *
  * @author KYIMINHAN </BR>
  * @version 1.0 </BR>
- * @since 2019/06/04 </BR>
- *        spring-mybatis system </BR>
- *        com.kyiminhan.mm.spring.controller </BR>
- *        EmployeeController.java </BR>
+ * @since 2019/06/11 </BR>
+ * spring-mybatis system </BR>
+ * com.kyiminhan.mm.spring.controller </BR>
+ * EmployeeController.java </BR>
  */
 @Controller
 @RequestMapping(path = "/employee")
@@ -77,9 +75,9 @@ public class EmployeeController {
 	/**
 	 * Creates the.
 	 *
-	 * @param employee      the employee
+	 * @param employee the employee
 	 * @param bindingResult the binding result
-	 * @param model         the model
+	 * @param model the model
 	 * @return String
 	 */
 	@PostMapping(value = "/create")
@@ -92,7 +90,7 @@ public class EmployeeController {
 	/**
 	 * Edits the.
 	 *
-	 * @param id    the id
+	 * @param id the id
 	 * @param model the model
 	 * @return String
 	 */
@@ -105,10 +103,10 @@ public class EmployeeController {
 	/**
 	 * Edits the.
 	 *
-	 * @param id            the id
-	 * @param employee      the employee
+	 * @param id the id
+	 * @param employee the employee
 	 * @param bindingResult the binding result
-	 * @param model         the model
+	 * @param model the model
 	 * @return String
 	 */
 	@PostMapping(value = "/{id}/edit")
@@ -121,7 +119,7 @@ public class EmployeeController {
 	/**
 	 * Detail.
 	 *
-	 * @param id    the id
+	 * @param id the id
 	 * @param model the model
 	 * @return String
 	 */
@@ -134,7 +132,7 @@ public class EmployeeController {
 	/**
 	 * Delete.
 	 *
-	 * @param id    the id
+	 * @param id the id
 	 * @param model the model
 	 * @return String
 	 */
@@ -150,10 +148,9 @@ public class EmployeeController {
 	 * @param model the model
 	 * @return String
 	 */
-	@GetMapping(value = { "/", "/list" })
+	@GetMapping(value = { "", "/", "/list" })
 	public String list(final Model model) {
-		final Collection<Employee> employees = this.employeeService.getAll();
-		model.addAttribute("employees", employees);
+		model.addAttribute("employees", this.employeeService.getAll());
 		return this.forward("list");
 	}
 }

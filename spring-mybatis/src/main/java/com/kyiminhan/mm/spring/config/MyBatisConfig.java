@@ -18,10 +18,10 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  *
  * @author KYIMINHAN </BR>
  * @version 1.0 </BR>
- * @since 2019/06/04 </BR>
- *        spring-mybatis system </BR>
- *        com.kyiminhan.mm.spring.config </BR>
- *        MyBatisConfig.java </BR>
+ * @since 2019/06/11 </BR>
+ * spring-mybatis system </BR>
+ * com.kyiminhan.mm.spring.config </BR>
+ * MyBatisConfig.java </BR>
  */
 @Configuration
 @EnableTransactionManagement

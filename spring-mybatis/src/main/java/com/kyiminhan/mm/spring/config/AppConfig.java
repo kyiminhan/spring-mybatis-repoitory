@@ -22,10 +22,10 @@ import org.thymeleaf.spring5.view.ThymeleafViewResolver;
  *
  * @author KYIMINHAN </BR>
  * @version 1.0 </BR>
- * @since 2019/06/04 </BR>
- *        spring-mybatis system </BR>
- *        com.kyiminhan.mm.spring.config </BR>
- *        AppConfig.java </BR>
+ * @since 2019/06/11 </BR>
+ * spring-mybatis system </BR>
+ * com.kyiminhan.mm.spring.config </BR>
+ * AppConfig.java </BR>
  */
 @EnableWebMvc
 @Configuration
