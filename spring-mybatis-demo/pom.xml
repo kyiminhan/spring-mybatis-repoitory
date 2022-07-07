@@ -15,7 +15,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
 		<maven-war-plugin.version>3.2.2</maven-war-plugin.version>
-		<spring-framework.version>5.1.5.RELEASE</spring-framework.version>
+		<spring-framework.version>5.2.21.RELEASE</spring-framework.version>
 		<lombok.version>1.18.6</lombok.version>
 		<!-- MyBatis Framework Version -->
 		<mybatis.version>3.5.0</mybatis.version>
